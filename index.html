@@ -8,7 +8,11 @@
 <body>
 
   <header class="header">
-    <h1>Pablo Benjamin Santana Herrera</h1>
+    <div class="flex-usuario">
+        <h1>Pablo Benjamin Santana Herrera</h1>
+
+        <div><img src="./user_icon_149851.png" alt=""></div>
+    </div>
   </header>
 
   <div class="contenedor">
@@ -51,6 +55,12 @@
 
       <label>Nombre completo</label>
       <input type="text" id="nombreCompleto" readonly>
+
+        <div class="icono-usuario-form">
+            <img src="./user_icon_149851.png" alt="Usuario">
+        </div>
+
+      
     </section>
 
     </div>
@@ -102,7 +112,7 @@
         });
 
         setInterval(() => {
-            obtenerFechaActual().then(fecha => {
+            obtenerFechaActual().then(fecha => { 
                 document.getElementById("fecha").value = fecha;
              });
         }, 60000);
