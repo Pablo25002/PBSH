@@ -47,7 +47,7 @@
       <label>Apellido</label>
       <input type="text" id="apellido">
 
-      <button class="btn-rojo">Registrar</button>
+      <button class="btn-rojo" onclick="registrar()">Registrar</button>
 
       <label>Nombre completo</label>
       <input type="text" id="nombreCompleto" readonly>
@@ -66,6 +66,29 @@
          document.getElementById("resultado").value = n1 * n2;
         }
     </script>
+    <script>
+        class Persona {
+        constructor(nombre, apellido) {
+            this.nombre = nombre;
+            this.apellido = apellido;
+        }
+
+        getNombreCompleto() {
+            return this.nombre + " " + this.apellido;
+        }
+        }
+
+        function registrar() {
+        const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
+
+        let persona = new Persona(nombre, apellido);
+
+        document.getElementById("nombreCompleto").value =
+            persona.getNombreCompleto();
+        }
+</script>
+
 
 </body>
 </html>
