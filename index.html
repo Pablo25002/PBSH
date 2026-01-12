@@ -91,18 +91,25 @@
 
     <script>
         function obtenerFechaActual() {
-        return new Promise(resolve => {
-            setInterval(() => {
-            const fecha = new Date();
-            resolve(fecha.toLocaleString());
-            }, 60000); // cada minuto
-        });
+         return new Promise(resolve => {
+             const fecha = new Date();
+             resolve(fecha.toLocaleString());
+            });
         }
 
+        // Mostrar fecha inmediatamente
         obtenerFechaActual().then(fecha => {
         document.getElementById("fecha").value = fecha;
         });
+
+        // Actualizar cada minuto
+        setInterval(() => {
+            obtenerFechaActual().then(fecha => {
+                document.getElementById("fecha").value = fecha;
+             });
+        }, 60000);
     </script>
+
 
 
 
