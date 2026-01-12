@@ -97,12 +97,10 @@
             });
         }
 
-        // Mostrar fecha inmediatamente
         obtenerFechaActual().then(fecha => {
         document.getElementById("fecha").value = fecha;
         });
 
-        // Actualizar cada minuto
         setInterval(() => {
             obtenerFechaActual().then(fecha => {
                 document.getElementById("fecha").value = fecha;
